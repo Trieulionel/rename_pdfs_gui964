@@ -1,4 +1,4 @@
-name: Build Python 3.14 64‑bit App
+name: Build Python 3.14 64-bit App
 
 on:
   push:
@@ -16,14 +16,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2️⃣ Cài Python 3.14 64‑bit
+      # 2️⃣ Cài Python 3.14 64-bit
       - name: Set up Python 3.14 (x64)
         uses: actions/setup-python@v5
         with:
           python-version: 3.14
           architecture: x64
-          # nếu muốn dùng version thử nghiệm / pre‑release:
-          # allow-prereleases: true
+          # allow-prereleases: true  # nếu cần cài bản pre-release
 
       # 3️⃣ Cập nhật pip
       - name: Upgrade pip
@@ -37,7 +36,7 @@ jobs:
           if (Test-Path "requirements.txt") {
             python -m pip install -r requirements.txt
           } else {
-            Write‑Host "No requirements.txt found, skipping..."
+            Write-Host "No requirements.txt found, skipping..."
           }
 
       # 5️⃣ Kiểm tra đường dẫn Pillow
