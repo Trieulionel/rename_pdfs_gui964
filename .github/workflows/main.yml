@@ -55,7 +55,7 @@ jobs:
             --hidden-import=PIL.ImageTk `
             --hidden-import=fitz `
             --hidden-import=PyMuPDF `
-            rename_pdfs_gui9.py
+            rename_pdfs_gui964.py
 
       # 7️⃣ Upload file EXE lên GitHub Actions (tab Artifacts)
       - name: Upload build artifact
