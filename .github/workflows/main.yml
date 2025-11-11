@@ -62,4 +62,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: PDF_Renamer_64bit_Py3.14
-          path: dist/rename_pdfs_gui9.exe
+          path: dist/rename_pdfs_gui964.exe
