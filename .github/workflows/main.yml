@@ -55,7 +55,7 @@ jobs:
             --hidden-import=PIL.ImageTk `
             --hidden-import=fitz `
             --hidden-import=PyMuPDF `
-            rename_pdfs_gui9.py
+            rename_pdfs_gui964.py
 
       # 7️⃣ List files for debugging
       - name: List dist folder
@@ -68,4 +68,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: PDF_Renamer_64bit_AVFriendly
-          path: dist/
+          path: dist/rename_pdfs_gui964
