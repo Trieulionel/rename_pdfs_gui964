@@ -1,4 +1,4 @@
-name: Build Python 3.8.7 64-bit App
+name: Build Python 3.14 64‑bit App
 
 on:
   push:
@@ -16,12 +16,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2️⃣ Cài Python 3.8.7 64-bit
-      - name: Set up Python 3.8.7 (x64)
+      # 2️⃣ Cài Python 3.14 64‑bit
+      - name: Set up Python 3.14 (x64)
         uses: actions/setup-python@v5
         with:
-          python-version: 3.8.7
+          python-version: 3.14
           architecture: x64
+          # nếu muốn dùng version thử nghiệm / pre‑release:
+          # allow-prereleases: true
 
       # 3️⃣ Cập nhật pip
       - name: Upgrade pip
@@ -35,7 +37,7 @@ jobs:
           if (Test-Path "requirements.txt") {
             python -m pip install -r requirements.txt
           } else {
-            Write-Host "No requirements.txt found, skipping..."
+            Write‑Host "No requirements.txt found, skipping..."
           }
 
       # 5️⃣ Kiểm tra đường dẫn Pillow
@@ -48,7 +50,7 @@ jobs:
       - name: Build executable (PyInstaller)
         shell: pwsh
         run: |
-          pyinstaller --onefile --noconsole ` 
+          pyinstaller --onefile --noconsole `
             --hidden-import=PIL `
             --hidden-import=PIL.Image `
             --hidden-import=PIL.ImageTk `
@@ -60,5 +62,5 @@ jobs:
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: PDF_Renamer_64bit
+          name: PDF_Renamer_64bit_Py3.14
           path: dist/rename_pdfs_gui9.exe
